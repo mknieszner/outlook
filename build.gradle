@@ -9,7 +9,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    }
 }
 
 apply plugin: 'java'
@@ -30,7 +30,34 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-web')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-
+//    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.21'
+//    compile group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.8'
+//    compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.8'
+//    compile group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.8'
+//    compile group: 'org.springframework', name: 'spring-web'
+//    compile group: 'org.springframework', name: 'spring-webmvc'
+//    compile group: 'org.springframework', name: 'spring-orm'
+//    compile group: 'org.springframework', name: 'spring-jdbc'
+//    compile group: 'org.springframework', name: 'spring-tx'
+//    compile group: 'org.springframework', name: 'spring-context-support'
+//    compile group: 'org.springframework', name: 'spring-context'
+//    compile group: 'org.springframework', name: 'spring-aop'
+//    compile group: 'org.springframework', name: 'spring-beans'
+//    compile group: 'org.springframework', name: 'spring-expression'
+//    compile group: 'org.springframework', name: 'spring-core'
+//    compile group: 'org.springframework', name: 'spring-webmvc-portlet'
+    compile group: 'jstl', name: 'jstl', version: '1.2'
+//    compile group: 'javax.servlet', name: 'jsp-api', version: '2.0'
+//    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
+//    compile group: 'org.eclipse.jetty', name: 'jetty-maven-plugin', version: '9.4.0.M0'
+    compile ('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.3.0'
+    compile group: 'com.squareup.retrofit2', name: 'converter-jackson', version: '2.3.0'
+    compile group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: '3.9.1'
 }

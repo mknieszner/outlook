@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<title><th:getAsString name="title"></th:getAsString></title>-->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+<th:useAttribute name="current"/>
+<div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                        aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/}">Java Outlook </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li th:classappend="${session.current == 'index' ? 'active' : '' }">
+                        <a th:href="@{/}">Home</a>
+                    </li>
+                    <li th:if="${session.userConnected == true}" th:classappend="${session.current == 'mail' ? 'active' : '' }">
+                        <a th:href="@{/mail}">Mail</a>
+                    </li>
+                </ul>
+                <p th:if="${session.userConnected}" class="navbar-text navbar-right" th:text="'Signed in as '+ ${session.userName}">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a th:href="@{/logout}" method="post">Logout</a>
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+    <p th:text="${session.body}"></p>
+</div>
+</body>
+</html>

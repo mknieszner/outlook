@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <div th:if="${error != null}" class="alert alert-danger" th:text="${error}"></div>
+<div class="jumbotron">
+    <h1>Java Web App Tutorial</h1>
+    <p>This sample uses the Mail API to read messages in your inbox.</p>
+    <p><a class="btn btn-lg btn-primary" th:href="${loginUrl}" >Click here to login</a></p>
+    <!--<p><h3 th:text="${loginUrl}"></h3></p>-->
+</div>

@@ -1,0 +1,27 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<table class="table">
+    <caption>Inbox</caption>
+    <thead>
+    <tr>
+        <th><span class="glyphicon glyphicon-envelope"></span></th>
+        <th>From</th>
+        <th>Subject</th>
+        <th>Received</th>
+        <th>Preview</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="message : ${messages}" th:classappend="${message.isRead == true ? '' : 'info'}">
+            <td>
+                <span th:if="${message.isRead == false}" class="glyphicon glyphicon-envelope" ></span>
+            </td>
+            <td th:text="${message.from.emailAddress.name}"></td>
+            <td th:text="${message.subject}" ></td>
+            <td th:text="${message.receivedDateTime}" ></td>
+            <td th:text="${message.bodyPreview}" ></td>
+        </tr>
+    </tbody>
+</table>
+</html>
