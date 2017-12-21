@@ -2,7 +2,6 @@
 **/build/
 !gradle/wrapper/gradle-wrapper.jar
 **/out/
-.properties
 
 ### STS ###
 .apt_generated
@@ -25,3 +24,4 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+*.properties
